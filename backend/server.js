@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static("backend/public"));
 
-app.use("/api/users", userRoutes);
+app.use("https://task-manager-app-l2ru.onrender.com/api/users", userRoutes);
 app.get("/", (req, res) => res.send("Server is ready"));
 app.use(notFound);
 app.use(errorHandler);
