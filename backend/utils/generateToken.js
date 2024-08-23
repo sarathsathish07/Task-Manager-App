@@ -12,6 +12,7 @@ const generateToken = (res, userId) => {
   secure: false,      
   maxAge: 30 * 24 * 60 * 60 * 1000,
   });
+  console.log("cook",res.cookie)
 };
 
 
