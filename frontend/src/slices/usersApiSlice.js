@@ -1,79 +1,73 @@
-import { apiSlice } from "./apiSlice.js";
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const USERS_URL = "https://task-manager-app-l2ru.onrender.com/api/users";
+const baseQuery = fetchBaseQuery({
+  baseUrl: 'https://task-manager-app-l2ru.onrender.com/api',
+  credentials: 'include', 
+});
 
-export const usersApiSlice = apiSlice.injectEndpoints({
+export const apiSlice = createApi({
+  reducerPath: 'api',
+  baseQuery,
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/auth`,
-        method: "POST",
+        url: '/users/auth',
+        method: 'POST',
         body: data,
-         credentials: "include"
       }),
     }),
     googleLogin: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/googleLogin`,
-        method: "POST",
+        url: '/users/googleLogin',
+        method: 'POST',
         body: data,
-         credentials: "include"
       }),
     }),
     register: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}`,
-        method: "POST",
+        url: '/users',
+        method: 'POST',
         body: data,
-         credentials: "include"
       }),
     }),
     logout: builder.mutation({
       query: () => ({
-        url: `${USERS_URL}/logout`,
-        method: "POST",
-         credentials: "include"
+        url: '/users/logout',
+        method: 'POST',
       }),
     }),
     updateUser: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/profile`,
-        method: "PUT",
+        url: '/users/profile',
+        method: 'PUT',
         body: data,
-         credentials: "include"
       }),
     }),
     createTask: builder.mutation({
       query: (taskData) => ({
-        url: `${USERS_URL}/create-task`,
-        method: "POST",
+        url: '/users/create-task',
+        method: 'POST',
         body: taskData,
-         credentials: "include"
       }),
     }),
     getTasks: builder.query({
-      query: ({ search = "", sort = "recent" } = {}) => ({
-        url: `${USERS_URL}/get-tasks`,
-        method: "GET",
+      query: ({ search = '', sort = 'recent' } = {}) => ({
+        url: '/users/get-tasks',
+        method: 'GET',
         params: { search, sort },
-         credentials: "include"
       }),
     }),
-
     updateTask: builder.mutation({
       query: ({ id, taskData, status }) => ({
-        url: `${USERS_URL}/update-task/${id}`,
-        method: "PUT",
+        url: `/users/update-task/${id}`,
+        method: 'PUT',
         body: { taskData, status },
-         credentials: "include"
       }),
     }),
-
     deleteTask: builder.mutation({
       query: (id) => ({
-        url: `${USERS_URL}/delete-task/${id}`,
-        method: "DELETE",
-         credentials: "include"
+        url: `/users/delete-task/${id}`,
+        method: 'DELETE',
       }),
     }),
   }),
@@ -89,4 +83,4 @@ export const {
   useUpdateTaskMutation,
   useDeleteTaskMutation,
   useGoogleLoginMutation,
-} = usersApiSlice;
+} = apiSlice;
