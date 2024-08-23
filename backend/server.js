@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 app.use(cors({
-  origin: "https://task-manager-app-7e1v-1qh2cbcx1-sarath-sathishs-projects.vercel.app/", 
+  origin: "https://task-manager-app-7e1v-1qh2cbcx1-sarath-sathishs-projects.vercel.app", 
   credentials: true,  
 }));
 
