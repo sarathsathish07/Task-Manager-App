@@ -1,0 +1,93 @@
+.custom-login-btn {
+  background-color: white !important;
+  color: rgba(50, 115, 245, 255) !important;
+  border: 1px solid rgba(50, 115, 245, 255) !important;
+}
+
+.custom-signup-btn {
+  color: white !important;
+  border: none !important;
+}
+
+.login-title {
+  color: #0d6efd;
+  font-weight: 700;
+}
+.login-card {
+  border: 2px solid rgba(50, 115, 245, 255);
+}
+.login-btn {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  background-color: rgba(50, 115, 245, 255);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.login-btn:hover {
+  background-color: rgba(45, 105, 235, 255);
+}
+.border {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.header-bar {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px;
+  background-color: #5596f5;
+  color: white;
+  margin-bottom: 15px;
+}
+.not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.not-found-content {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.oops-text {
+  font-size: 72px;
+  color: #ff6f61;
+  margin: 0;
+}
+
+.emoji {
+  font-size: 100px;
+  margin: 20px 0;
+}
+
+.title {
+  font-size: 36px;
+  color: #333;
+  margin: 10px 0;
+}
+
+.message {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0 20px;
+}
+
+.back-home {
+  font-size: 18px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.back-home:hover {
+  text-decoration: underline;
+}
