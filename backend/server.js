@@ -14,7 +14,7 @@ connectDB();
 
 app.use(cors({
   origin: "https://task-manager-app-7e1v-1qh2cbcx1-sarath-sathishs-projects.vercel.app", 
-  credentials: true,  // Allows cookies and other credentials
+  credentials: true,  
 }));
 
 app.use(express.json());
