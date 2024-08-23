@@ -9,6 +9,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/auth`,
         method: "POST",
         body: data,
+         credentials: "include"
       }),
     }),
     googleLogin: builder.mutation({
@@ -16,6 +17,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/googleLogin`,
         method: "POST",
         body: data,
+         credentials: "include"
       }),
     }),
     register: builder.mutation({
@@ -23,12 +25,14 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}`,
         method: "POST",
         body: data,
+         credentials: "include"
       }),
     }),
     logout: builder.mutation({
       query: () => ({
         url: `${USERS_URL}/logout`,
         method: "POST",
+         credentials: "include"
       }),
     }),
     updateUser: builder.mutation({
@@ -36,6 +40,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/profile`,
         method: "PUT",
         body: data,
+         credentials: "include"
       }),
     }),
     createTask: builder.mutation({
@@ -43,6 +48,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/create-task`,
         method: "POST",
         body: taskData,
+         credentials: "include"
       }),
     }),
     getTasks: builder.query({
@@ -50,6 +56,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/get-tasks`,
         method: "GET",
         params: { search, sort },
+         credentials: "include"
       }),
     }),
 
@@ -58,6 +65,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/update-task/${id}`,
         method: "PUT",
         body: { taskData, status },
+         credentials: "include"
       }),
     }),
 
@@ -65,6 +73,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: (id) => ({
         url: `${USERS_URL}/delete-task/${id}`,
         method: "DELETE",
+         credentials: "include"
       }),
     }),
   }),
