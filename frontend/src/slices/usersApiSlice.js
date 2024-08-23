@@ -1,6 +1,6 @@
 import { apiSlice } from "./apiSlice.js";
 
-const USERS_URL = "/api/users";
+const USERS_URL = "https://task-manager-app-l2ru.onrender.com/api/users";
 
 export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

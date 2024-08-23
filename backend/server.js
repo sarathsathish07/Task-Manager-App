@@ -5,11 +5,17 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import cookieParser from "cookie-parser";
+import cors from "cors"; 
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 connectDB();
+
+app.use(cors({
+  origin: "https://task-manager-app-7e1v.vercel.app", 
+  credentials: true,  // Allows cookies and other credentials
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
