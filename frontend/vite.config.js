@@ -6,7 +6,7 @@ export default defineConfig({
   root: './', // The root is the current folder (frontend)
   plugins: [react()],
   build: {
-    outDir: '../dist', // Output directory will be in the project root (../dist)
+    outDir: 'dist', // Output directory will be in the project root (../dist)
     emptyOutDir: true, // Clear the output directory before building
   },
   server: {
