@@ -1,9 +1,6 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 
-const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://task-manager-app-l2ru.onrender.com/api',
-  credentials: 'include', 
-});
+const USERS_URL = '/api/users'
 
 export const apiSlice = createApi({
   reducerPath: 'api',
@@ -11,62 +8,62 @@ export const apiSlice = createApi({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: '/users/auth',
+        url: `${USERS_URL}/auth`,
         method: 'POST',
         body: data,
       }),
     }),
     googleLogin: builder.mutation({
       query: (data) => ({
-        url: '/users/googleLogin',
+        url: `${USERS_URL}/googleLogin`,
         method: 'POST',
         body: data,
       }),
     }),
     register: builder.mutation({
       query: (data) => ({
-        url: '/users',
+        url: `${USERS_URL}`,
         method: 'POST',
         body: data,
       }),
     }),
     logout: builder.mutation({
       query: () => ({
-        url: '/users/logout',
+        url: `${USERS_URL}/logout`,
         method: 'POST',
       }),
     }),
     updateUser: builder.mutation({
       query: (data) => ({
-        url: '/users/profile',
+        url: `${USERS_URL}/profile`,
         method: 'PUT',
         body: data,
       }),
     }),
     createTask: builder.mutation({
       query: (taskData) => ({
-        url: '/users/create-task',
+        url: `${USERS_URL}/create-task`,
         method: 'POST',
         body: taskData,
       }),
     }),
     getTasks: builder.query({
       query: ({ search = '', sort = 'recent' } = {}) => ({
-        url: '/users/get-tasks',
+        url: `${USERS_URL}/get-tasks`,
         method: 'GET',
         params: { search, sort },
       }),
     }),
     updateTask: builder.mutation({
       query: ({ id, taskData, status }) => ({
-        url: `/users/update-task/${id}`,
+        url: `${USERS_URL}/update-task/${id}`,
         method: 'PUT',
         body: { taskData, status },
       }),
     }),
     deleteTask: builder.mutation({
       query: (id) => ({
-        url: `/users/delete-task/${id}`,
+        url: `${USERS_URL}/delete-task/${id}`,
         method: 'DELETE',
       }),
     }),
