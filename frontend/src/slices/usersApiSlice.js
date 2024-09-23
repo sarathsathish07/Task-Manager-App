@@ -1,4 +1,9 @@
-import { createApi } from '@reduxjs/toolkit/query/react';
+import { createApi,fetchBaseQuery  } from '@reduxjs/toolkit/query/react';
+
+const baseQuery = fetchBaseQuery({
+  baseUrl: 'https://task-manager-app-l2ru.onrender.com',  
+  credentials: 'include',  
+});
 
 const USERS_URL = '/api/users'
 
