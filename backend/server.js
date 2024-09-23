@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 connectDB();
 
 app.use(cors({
-  origin: "https://task-manager-app-7e1v.vercel.app", 
+  origin: ["https://task-manager-app-7e1v.vercel.app","http://localhost:3000/" ],
   credentials: true,  
 }));
 
