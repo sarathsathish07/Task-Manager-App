@@ -1,10 +1,7 @@
-import { createApi  } from '@reduxjs/toolkit/query/react';
-
-
-
+import { apiSlice } from "./apiSlice";
 const USERS_URL = '/api/users'
 
-export const apiSlice = createApi({
+export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
@@ -80,4 +77,4 @@ export const {
   useUpdateTaskMutation,
   useDeleteTaskMutation,
   useGoogleLoginMutation,
-} = apiSlice;
+} = usersApiSlice;
